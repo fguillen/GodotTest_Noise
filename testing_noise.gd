@@ -10,6 +10,7 @@ extends Control
 # -- 07 constants
 # -- 08 exported variables
 @export var noise : FastNoiseLite
+@export var noise_speed := 10.0
 
 # -- 09 public variables
 # -- 10 private variables
@@ -30,7 +31,7 @@ var _first_values := true
 # -- 14 built-in virtual _ready method
 # -- 15 remaining built-in virtual methods
 func _process(delta):
-	_noise_index += delta
+	_noise_index += delta * noise_speed
 	var value = noise.get_noise_1d(_noise_index)
 	progress_bar.value = value
 

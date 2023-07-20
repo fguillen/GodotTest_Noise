@@ -3,8 +3,10 @@
 [ext_resource type="Script" path="res://testing_noise.gd" id="1_ny346"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_k10b5"]
-frequency = 0.1
-fractal_gain = 1.0
+noise_type = 5
+fractal_type = 3
+fractal_octaves = 4
+fractal_gain = 50.0
 
 [node name="TestingNoise" type="Control"]
 layout_mode = 3
@@ -15,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ny346")
 noise = SubResource("FastNoiseLite_k10b5")
+noise_speed = 5.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
